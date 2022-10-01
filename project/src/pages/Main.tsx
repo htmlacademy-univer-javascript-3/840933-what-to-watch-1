@@ -1,10 +1,11 @@
 import { Film, IFilmProps } from '../components/Film/Film';
 
 type IMainPageProps = {
-    films: IFilmProps[]
+    films: IFilmProps[];
+    limit: number;
 }
 
-export const MainPage = ({ films }: IMainPageProps) =>
+export const MainPage = ({ films, limit }: IMainPageProps) =>
   (
     <>
       <div className="visually-hidden">
@@ -228,7 +229,7 @@ export const MainPage = ({ films }: IMainPageProps) =>
             </li>
           </ul>
           <div className="catalog__films-list">
-            {films.map((film) => <Film key={film.name} name={film.name} imagePath={film.imagePath} />)}
+            {films.slice(0, limit).map((film) => <Film key={film.name} name={film.name} imagePath={film.imagePath} />)}
           </div>
           <div className="catalog__more">
             <button className="catalog__button" type="button">
