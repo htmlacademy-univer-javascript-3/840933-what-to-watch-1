@@ -1,4 +1,7 @@
-export const films = [
+import {IFilm} from '../components/Film/Film';
+import {IPromoFilm} from '../components/PromoFilm/PromoFilm';
+
+export const films: IFilm[] = [
   {
     name: 'Fantastic Beasts: The Crimes of Grindelwald',
     imagePath: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg'
@@ -76,3 +79,9 @@ export const films = [
     imagePath: 'img/midnight-special.jpg'
   },
 ];
+
+export const promoFilm: IPromoFilm = {
+  name: 'The Grand Budapest hotel',
+  genre: 'Drama',
+  creationYear: 2014
+};
