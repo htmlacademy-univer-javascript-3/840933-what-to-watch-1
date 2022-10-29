@@ -1,5 +1,7 @@
-import {Film, IFilm} from '../components/Film/Film';
-import {PromoFilmCard, IPromoFilm} from '../components/PromoFilm/PromoFilm';
+import {IFilm} from '../types/film.type';
+import {PromoFilmCard} from '../components/PromoFilm/PromoFilm';
+import {IPromoFilm} from '../types/promoFilm.type';
+import {FilmList} from '../components/FilmList/FilmList';
 
 type Props = {
   films: IFilm[];
@@ -7,7 +9,7 @@ type Props = {
   promoFilm: IPromoFilm;
 }
 
-export const MainPage = ({films, limit, promoFilm}: Props) =>
+export const MainPage = ({films, promoFilm}: Props) =>
   (
     <>
       <PromoFilmCard name={promoFilm.name} genre={promoFilm.genre} creationYear={promoFilm.creationYear} />
@@ -66,9 +68,7 @@ export const MainPage = ({films, limit, promoFilm}: Props) =>
               </a>
             </li>
           </ul>
-          <div className="catalog__films-list">
-            {films.slice(0, limit).map((film) => <Film key={film.name} name={film.name} imagePath={film.imagePath}/>)}
-          </div>
+          <FilmList {...films} />
           <div className="catalog__more">
             <button className="catalog__button" type="button">
               Show more

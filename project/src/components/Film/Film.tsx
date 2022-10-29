@@ -1,17 +1,14 @@
-export type IFilm = {
-    name: string;
-    imagePath: string;
-}
+import { Link } from 'react-router-dom';
 
-export const Film = ({ name, imagePath }: IFilm): JSX.Element => (
+import { IFilm } from '../../types/film.type';
+
+export const Film = (film: IFilm) => (
   <article className="small-film-card catalog__films-card">
     <div className="small-film-card__image">
-      <img src={imagePath} alt={name} width={280} height={175} />
+      <img src={film.posterImage} alt={film.name} width="280" height="175"/>
     </div>
     <h3 className="small-film-card__title">
-      <a className="small-film-card__link" href="film-page.html">
-        { name }
-      </a>
+      <Link className="small-film-card__link" to={`/films/${film.id}`}>{film.name}</Link>
     </h3>
   </article>
 );

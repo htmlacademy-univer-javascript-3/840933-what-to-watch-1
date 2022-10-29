@@ -1,10 +1,5 @@
 import {Link} from 'react-router-dom';
-
-export type IPromoFilm = {
-  name: string;
-  genre: string;
-  creationYear: number;
-}
+import {IPromoFilm} from '../../types/promoFilm.type';
 
 export const PromoFilmCard = ({name, genre, creationYear}: IPromoFilm) => (
   <section className="film-card">
@@ -70,3 +65,4 @@ export const PromoFilmCard = ({name, genre, creationYear}: IPromoFilm) => (
     </div>
   </section>
 );
+

@@ -4,7 +4,7 @@ import {AppRoute} from '../constants/AppRoute.const';
 export const Player = () => (
   <div className="player">
     <video src="#" className="player__video" poster="img/player-poster.jpg" />
-    <Link style={{textDecoration: 'none'}} to={AppRoute.Main} type="button" className="player__exit">
+    <Link to={AppRoute.Main} type="button" className="player__exit">
         Exit
     </Link>
     <div className="player__controls">

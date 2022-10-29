@@ -8,7 +8,7 @@ import {MainPage} from '../../pages/Main';
 import {MyList} from '../../pages/MyList';
 import {SignIn} from '../../pages/SignIn';
 import {NotFound} from '../../pages/NotFound';
-import {films, promoFilm} from '../../mocks/films.mock';
+import {films, promoFilm} from '../../mocks/films';
 import {MoviePage} from '../../pages/MoviePage';
 import {AddReview} from '../../pages/AddReview';
 import {Player} from '../../pages/Player';
@@ -22,7 +22,7 @@ function App(): JSX.Element {
         <Route path={AppRoute.Film} element={<MoviePage />}/>
         <Route path={AppRoute.MyList} element={
           <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-            <MyList/>
+            <MyList {...films}/>
           </PrivateRoute>
         }
         />
