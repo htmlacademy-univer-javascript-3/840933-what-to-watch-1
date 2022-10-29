@@ -1,5 +1,5 @@
-import {IPromoFilm} from '../types/promoFilm.type';
-import {IFilm} from '../types/film.type';
+import { IPromoFilm } from '../types/promoFilm.type';
+import { IFilm } from '../types/film.type';
 
 export const films: IFilm[] = [
   {
@@ -9,8 +9,10 @@ export const films: IFilm[] = [
     previewImage: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg',
     backgroundImage: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -19,7 +21,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 2,
@@ -28,8 +30,10 @@ export const films: IFilm[] = [
     previewImage: 'img/bohemian-rhapsody.jpg',
     backgroundImage: 'img/bohemian-rhapsody.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -38,7 +42,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 3,
@@ -47,8 +51,10 @@ export const films: IFilm[] = [
     previewImage: 'img/macbeth.jpg',
     backgroundImage: 'img/macbeth.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -57,7 +63,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 4,
@@ -66,8 +72,10 @@ export const films: IFilm[] = [
     previewImage: 'img/aviator.jpg',
     backgroundImage: 'img/aviator.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -76,7 +84,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 5,
@@ -85,8 +93,10 @@ export const films: IFilm[] = [
     previewImage: 'img/we-need-to-talk-about-kevin.jpg',
     backgroundImage: 'img/we-need-to-talk-about-kevin.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -95,7 +105,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 6,
@@ -104,8 +114,10 @@ export const films: IFilm[] = [
     previewImage: 'img/what-we-do-in-the-shadows.jpg',
     backgroundImage: 'img/what-we-do-in-the-shadows.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -114,7 +126,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 7,
@@ -123,8 +135,10 @@ export const films: IFilm[] = [
     previewImage: 'img/revenant.jpg',
     backgroundImage: 'img/revenant.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -133,7 +147,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 8,
@@ -142,8 +156,10 @@ export const films: IFilm[] = [
     previewImage: 'img/johnny-english.jpg',
     backgroundImage: 'img/johnny-english.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -152,7 +168,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 9,
@@ -161,8 +177,10 @@ export const films: IFilm[] = [
     previewImage: 'img/shutter-island.jpg',
     backgroundImage: 'img/shutter-island.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -171,7 +189,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 10,
@@ -180,8 +198,10 @@ export const films: IFilm[] = [
     previewImage: 'img/pulp-fiction.jpg',
     backgroundImage: 'img/pulp-fiction.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -190,7 +210,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 11,
@@ -199,8 +219,10 @@ export const films: IFilm[] = [
     previewImage: 'img/no-country-for-old-men.jpg',
     backgroundImage: 'img/no-country-for-old-men.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -209,7 +231,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 12,
@@ -218,8 +240,10 @@ export const films: IFilm[] = [
     previewImage: 'img/snatch.jpg',
     backgroundImage: 'img/snatch.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -228,7 +252,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 13,
@@ -237,8 +261,10 @@ export const films: IFilm[] = [
     previewImage: 'img/moonrise-kingdom.jpg',
     backgroundImage: 'img/moonrise-kingdom.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -247,7 +273,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 14,
@@ -256,8 +282,10 @@ export const films: IFilm[] = [
     previewImage: 'img/seven-years-in-tibet.jpg',
     backgroundImage: 'img/seven-years-in-tibet.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -266,7 +294,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 16,
@@ -275,8 +303,10 @@ export const films: IFilm[] = [
     previewImage: 'img/midnight-special.jpg',
     backgroundImage: 'img/midnight-special.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -285,7 +315,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 17,
@@ -294,8 +324,10 @@ export const films: IFilm[] = [
     previewImage: 'img/war-of-the-worlds.jpg',
     backgroundImage: 'img/war-of-the-worlds.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -304,7 +336,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 18,
@@ -313,8 +345,10 @@ export const films: IFilm[] = [
     previewImage: 'img/dardjeeling-limited.jpg',
     backgroundImage: 'img/dardjeeling-limited.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -323,7 +357,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 19,
@@ -332,8 +366,10 @@ export const films: IFilm[] = [
     previewImage: 'img/orlando.jpg',
     backgroundImage: 'img/orlando.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -342,7 +378,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 20,
@@ -351,8 +387,10 @@ export const films: IFilm[] = [
     previewImage: 'img/mindhunter.jpg',
     backgroundImage: 'img/mindhunter.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -361,7 +399,7 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
+    isFavorite: true,
   },
   {
     id: 21,
@@ -370,8 +408,10 @@ export const films: IFilm[] = [
     previewImage: 'img/midnight-special.jpg',
     backgroundImage: 'img/midnight-special.jpg',
     backgroundColor: 'black',
-    videoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
-    previewVideoLink: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    videoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
+    previewVideoLink:
+      'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4',
     description: 'Description',
     rating: 8.9,
     scoresCount: 10,
@@ -380,12 +420,12 @@ export const films: IFilm[] = [
     runTime: 60,
     genre: 'crime',
     released: 2010,
-    isFavorite: true
-  }
+    isFavorite: true,
+  },
 ];
 
 export const promoFilm: IPromoFilm = {
   name: 'The Grand Budapest hotel',
   genre: 'Drama',
-  creationYear: 2014
+  creationYear: 2014,
 };
