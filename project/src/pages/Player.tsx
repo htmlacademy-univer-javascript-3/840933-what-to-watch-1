@@ -1,18 +1,19 @@
-import {Link} from 'react-router-dom';
-import {AppRoute} from '../constants/AppRoute.const';
+import { Link } from 'react-router-dom';
+
+import { AppRoute } from '../constants/AppRoute.const';
 
 export const Player = () => (
   <div className="player">
     <video src="#" className="player__video" poster="img/player-poster.jpg" />
     <Link to={AppRoute.Main} type="button" className="player__exit">
-        Exit
+      Exit
     </Link>
     <div className="player__controls">
       <div className="player__controls-row">
         <div className="player__time">
           <progress className="player__progress" value={30} max={100} />
           <div className="player__toggler" style={{ left: '30%' }}>
-              Toggler
+            Toggler
           </div>
         </div>
         <div className="player__time-value">1:30:29</div>
@@ -35,4 +36,3 @@ export const Player = () => (
     </div>
   </div>
 );
-

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import { IFilm } from '../../types/film.type';
 import { Film } from '../Film/Film';
 
