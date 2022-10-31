@@ -43,7 +43,9 @@ export const AddReview = () => {
               </div>
             </li>
             <li className="user-block__item">
-              <a className="user-block__link">Sign out</a>
+              <Link to="/login" className="user-block__link">
+                Sign out
+              </Link>
             </li>
           </ul>
         </header>

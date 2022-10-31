@@ -24,7 +24,7 @@ function App(): JSX.Element {
           }
         />
         <Route path={AppRoute.SignIn} element={<SignIn />} />
-        <Route path={AppRoute.Film} element={<MoviePage />} />
+        <Route path={AppRoute.Film} element={<MoviePage {...films.slice(0, 3)} />} />
         <Route
           path={AppRoute.MyList}
           element={

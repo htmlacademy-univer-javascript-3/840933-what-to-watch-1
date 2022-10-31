@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Logo } from '../components/Logo/Logo';
 
 export const MoviePageInList = () => (
@@ -27,7 +29,9 @@ export const MoviePageInList = () => (
               </div>
             </li>
             <li className="user-block__item">
-              <a className="user-block__link">Sign out</a>
+              <Link to="/login" className="user-block__link">
+                Sign out
+              </Link>
             </li>
           </ul>
         </header>

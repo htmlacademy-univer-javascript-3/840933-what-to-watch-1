@@ -18,14 +18,14 @@ export const AddReviewForm = () => {
         <div className="rating__stars">
           {
             Array.from(Array(10).keys()).map((currentRating) => (
-              <span key={currentRating}>
+              <>
                 <input className="rating__input" id={`radio-${currentRating + 1}`} type="radio"
                   name="rating" value={currentRating + 1} checked={rating === currentRating + 1} onChange={onRatingChange}
                 />
                 <label className="rating__label" htmlFor={`radio-${currentRating + 1}`}>
                   Rating {rating + 1}
                 </label>
-              </span>
+              </>
             ))
           }
         </div>
