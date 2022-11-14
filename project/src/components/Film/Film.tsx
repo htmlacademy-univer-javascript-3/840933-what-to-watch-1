@@ -8,6 +8,7 @@ import { PLAYER_DELAY } from '../../constants/player.const';
 export const Film = (film: IFilm) => {
   const [isPlayVideo, setIsPlayVideo] = useState(false);
   const [isDelayEnd, setIsDelayEnd] = useState(false);
+  const { onMouseOver, videoLink, previewImage, name, id } = film;
 
   useEffect(() =>{
     let startPlay = true;
@@ -26,7 +27,7 @@ export const Film = (film: IFilm) => {
   }, [isDelayEnd, isPlayVideo]);
 
   const handleMouseOver = () => {
-    film.onMouseOver?.(film);
+    onMouseOver?.(film);
     setIsDelayEnd(true);
   };
 
@@ -41,8 +42,8 @@ export const Film = (film: IFilm) => {
       onMouseLeave={handleMouseLeave}
     >
       <div className="small-film-card__image">
-        <Player source={film.videoLink}
-          preview={film.previewImage}
+        <Player source={videoLink}
+          preview={previewImage}
           muted
           isPlaying={isPlayVideo}
           height="175"
@@ -50,8 +51,8 @@ export const Film = (film: IFilm) => {
         />
       </div>
       <h3 className="small-film-card__title">
-        <Link className="small-film-card__link" to={`/films/${film.id}`}>
-          {film.name}
+        <Link className="small-film-card__link" to={`/films/${id}`}>
+          {name}
         </Link>
       </h3>
     </article>
