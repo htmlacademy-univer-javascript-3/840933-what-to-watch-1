@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 
-import { AddReviewForm } from '../components/AddReviewForm/AddReviewForm';
+import { ReviewForm } from '../components/ReviewForm/ReviewForm';
 import { Logo } from '../components/Logo/Logo';
 
 export const AddReview = () => {
@@ -59,7 +59,7 @@ export const AddReview = () => {
         </div>
       </div>
       <div className="add-review">
-        <AddReviewForm />
+        <ReviewForm />
       </div>
     </section>
   );

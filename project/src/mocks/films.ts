@@ -19,7 +19,7 @@ export const films: IFilm[] = [
     director: 'Director',
     starring: ['Actor 1', 'Actor 2', 'Actor 3'],
     runTime: 60,
-    genre: 'crime',
+    genre: 'comedy',
     released: 2010,
     isFavorite: true,
   },

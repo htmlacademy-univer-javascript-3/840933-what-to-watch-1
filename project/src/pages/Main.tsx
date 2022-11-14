@@ -16,59 +16,63 @@ export const MainPage = ({ films, promoFilm }: IMainPage) => (
         <ul className="catalog__genres-list">
           <li className="catalog__genres-item catalog__genres-item--active">
             <a href="/" className="catalog__genres-link">
-              All genres
+                All genres
+            </a>
+          </li>
+          <li className="catalog__genres-item">
+            <a href="/"
+              className="catalog__genres-link"
+            >
+                Comedies
+            </a>
+          </li>
+          <li className="catalog__genres-item">
+            <a href="/"
+              className="catalog__genres-link"
+            >
+                Crime
             </a>
           </li>
           <li className="catalog__genres-item">
             <a href="/" className="catalog__genres-link">
-              Comedies
+                Documentary
             </a>
           </li>
           <li className="catalog__genres-item">
             <a href="/" className="catalog__genres-link">
-              Crime
+                Dramas
             </a>
           </li>
           <li className="catalog__genres-item">
             <a href="/" className="catalog__genres-link">
-              Documentary
+                Horror
             </a>
           </li>
           <li className="catalog__genres-item">
             <a href="/" className="catalog__genres-link">
-              Dramas
+                Kids &amp; Family
             </a>
           </li>
           <li className="catalog__genres-item">
             <a href="/" className="catalog__genres-link">
-              Horror
+                Romance
             </a>
           </li>
           <li className="catalog__genres-item">
             <a href="/" className="catalog__genres-link">
-              Kids &amp; Family
+                Sci-Fi
             </a>
           </li>
           <li className="catalog__genres-item">
             <a href="/" className="catalog__genres-link">
-              Romance
-            </a>
-          </li>
-          <li className="catalog__genres-item">
-            <a href="/" className="catalog__genres-link">
-              Sci-Fi
-            </a>
-          </li>
-          <li className="catalog__genres-item">
-            <a href="/" className="catalog__genres-link">
-              Thrillers
+                Thrillers
             </a>
           </li>
         </ul>
         <FilmList {...films} />
         <div className="catalog__more">
           <button className="catalog__button" type="button">
-            Show more
+              Show more
           </button>
         </div>
       </section>
