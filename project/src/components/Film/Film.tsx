@@ -15,7 +15,7 @@ export const Film = (film: IFilm) => {
     if (isDelayEnd) {
       setTimeout(() => {
         if (startPlay) {
-          setIsPlayVideo(!isPlayVideo);
+          setIsPlayVideo(true);
         }
       }, PLAYER_DELAY);
     }
