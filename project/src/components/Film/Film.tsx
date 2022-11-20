@@ -6,17 +6,17 @@ import { Player } from '../Player/Player';
 import { PLAYER_DELAY } from '../../constants/player.const';
 
 export const Film = (film: IFilm) => {
-  const [isPlayVideo, setIsPlayVideo] = useState(false);
-  const [isDelayEnd, setIsDelayEnd] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isDelayed, setIsDelayed] = useState(false);
   const { onMouseOver, videoLink, previewImage, name, id } = film;
 
   useEffect(() =>{
     let startPlay = true;
 
-    if (isDelayEnd) {
+    if (isDelayed) {
       setTimeout(() => {
         if (startPlay) {
-          setIsPlayVideo(true);
+          setIsPlaying(true);
         }
       }, PLAYER_DELAY);
     }
@@ -24,16 +24,16 @@ export const Film = (film: IFilm) => {
     return () => {
       startPlay = false;
     };
-  }, [isDelayEnd, isPlayVideo]);
+  }, [isDelayed, isPlaying]);
 
   const handleMouseOver = () => {
     onMouseOver?.(film);
-    setIsDelayEnd(true);
+    setIsDelayed(true);
   };
 
   const handleMouseLeave = () => {
-    setIsPlayVideo(false);
-    setIsDelayEnd(false);
+    setIsPlaying(false);
+    setIsDelayed(false);
   };
 
   return (
@@ -45,7 +45,7 @@ export const Film = (film: IFilm) => {
         <Player source={videoLink}
           preview={previewImage}
           muted
-          isPlaying={isPlayVideo}
+          isPlaying={isPlaying}
           height="175"
           width="280"
         />
