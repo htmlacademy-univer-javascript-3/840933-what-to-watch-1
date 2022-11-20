@@ -16,4 +16,5 @@ export type IFilm = {
   genre: string;
   released: number;
   isFavorite: boolean;
+  onMouseOver?: (film: IFilm) => void;
 }
