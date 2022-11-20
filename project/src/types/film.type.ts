@@ -11,10 +11,10 @@ export type IFilm = {
   rating: number;
   scoresCount: number;
   director: string;
-  starring: string[];
-  runTime: 60;
+  actors: string[];
+  duration: 60;
   genre: string;
   released: number;
-  isFavorite: boolean;
+  isFavorite?: boolean;
   onMouseOver?: (film: IFilm) => void;
 }
