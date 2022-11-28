@@ -12,18 +12,7 @@ export const Tabs = (film: IFilm) => {
   const [activeTab, setActiveTab] = useState<Tab>(Tab.OVERVIEW);
   const reviews = REVIEW_LIST;
 
-  const renderTabs = () => {
-    switch (activeTab) {
-      case Tab.DETAILS:
-        return <DetailsTab {...film} />;
-      case Tab.REVIEWS:
-        return <ReviewsTab {...reviews} />;
-      default:
-        return <OverviewTab {...film} />;
-    }
-  };
-
-  const tabOnClickHandler = (tab: Tab) => () => setActiveTab(tab);
+  const handleTabClick = (tab: Tab) => () => setActiveTab(tab);
 
   return (
     <div className="film-card__desc">
@@ -36,7 +25,7 @@ export const Tabs = (film: IFilm) => {
           >
             <span
               className="film-nav__link"
-              onClick={tabOnClickHandler(Tab.OVERVIEW)}
+              onClick={handleTabClick(Tab.OVERVIEW)}
             >
               Overview
             </span>
@@ -48,7 +37,7 @@ export const Tabs = (film: IFilm) => {
           >
             <span
               className="film-nav__link"
-              onClick={tabOnClickHandler(Tab.DETAILS)}
+              onClick={handleTabClick(Tab.DETAILS)}
             >
               Details
             </span>
@@ -60,14 +49,16 @@ export const Tabs = (film: IFilm) => {
           >
             <span
               className="film-nav__link"
-              onClick={tabOnClickHandler(Tab.REVIEWS)}
+              onClick={handleTabClick(Tab.REVIEWS)}
             >
               Reviews
             </span>
           </li>
         </ul>
       </nav>
-      {renderTabs()}
+      {activeTab === Tab.REVIEWS && <ReviewsTab {...reviews} />}
+      {activeTab === Tab.OVERVIEW && <OverviewTab {...film} />}
+      {activeTab === Tab.DETAILS && <DetailsTab {...film} />}
     </div>
   );
 };
