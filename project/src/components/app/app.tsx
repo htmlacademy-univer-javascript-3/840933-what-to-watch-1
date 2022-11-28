@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { AppRoute } from '../../constants/AppRoute.const';
-import { FILM_LIMIT } from '../../constants/FilmLimit.const';
-import { AuthorizationStatus } from '../../constants/AuthStatus.const';
+import { AppRoute } from '../../constants/route.const';
+import { FILM_LIMIT } from '../../constants/film.const';
+import { AuthorizationStatus } from '../../constants/auth.const';
 import { PrivateRoute } from '../../privateRoute/privateRoute';
 import { MainPage } from '../../pages/Main';
 import { MyList } from '../../pages/MyList';
@@ -19,7 +19,7 @@ export const App = () => (
       <Route
         path={AppRoute.Main}
         element={
-          <MainPage promoFilm={promoFilm} films={mockFilms} limit={FILM_LIMIT} />
+          <MainPage promoFilm={promoFilm} limit={FILM_LIMIT} />
         }
       />
       <Route path={AppRoute.SignIn} element={<SignIn />} />
@@ -28,7 +28,7 @@ export const App = () => (
         path={AppRoute.MyList}
         element={
           <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-            <MyList {...mockFilms} />
+            <MyList />
           </PrivateRoute>
         }
       />

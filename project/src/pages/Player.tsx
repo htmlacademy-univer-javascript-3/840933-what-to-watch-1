@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { AppRoute } from '../constants/AppRoute.const';
+import { AppRoute } from '../constants/route.const';
 
 export const Player = () => (
   <div className="player">
