@@ -8,37 +8,33 @@ import { MainPage } from '../../pages/Main';
 import { MyList } from '../../pages/MyList';
 import { SignIn } from '../../pages/SignIn';
 import { NotFound } from '../../pages/NotFound';
-import { films, promoFilm } from '../../mocks/films';
-import { MoviePage } from '../../pages/MoviePage';
+import { mockFilms, promoFilm } from '../../mocks/films.mock';
+import { FilmPage } from '../../pages/FilmPage';
 import { AddReview } from '../../pages/AddReview';
 import { Player } from '../../pages/Player';
 
-function App(): JSX.Element {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path={AppRoute.Main}
-          element={
-            <MainPage promoFilm={promoFilm} films={films} limit={FILM_LIMIT} />
-          }
-        />
-        <Route path={AppRoute.SignIn} element={<SignIn />} />
-        <Route path={AppRoute.Film} element={<MoviePage {...films.slice(0, 3)} />} />
-        <Route
-          path={AppRoute.MyList}
-          element={
-            <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-              <MyList {...films} />
-            </PrivateRoute>
-          }
-        />
-        <Route path={AppRoute.AddReview} element={<AddReview />} />
-        <Route path={AppRoute.Player} element={<Player />} />
-        <Route path={AppRoute.NotFound} element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
-
-export default App;
+export const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route
+        path={AppRoute.Main}
+        element={
+          <MainPage promoFilm={promoFilm} films={mockFilms} limit={FILM_LIMIT} />
+        }
+      />
+      <Route path={AppRoute.SignIn} element={<SignIn />} />
+      <Route path={AppRoute.Film} element={<FilmPage {...mockFilms.slice(0, 3)} />} />
+      <Route
+        path={AppRoute.MyList}
+        element={
+          <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
+            <MyList {...mockFilms} />
+          </PrivateRoute>
+        }
+      />
+      <Route path={AppRoute.AddReview} element={<AddReview />} />
+      <Route path={AppRoute.Player} element={<Player />} />
+      <Route path={AppRoute.NotFound} element={<NotFound />} />
+    </Routes>
+  </BrowserRouter>
+);
