@@ -1,15 +1,27 @@
+import { useState } from 'react';
+
 import { PromoFilmCard } from '../components/PromoFilm/PromoFilm';
 import { FilmList } from '../components/FilmList/FilmList';
 import { IMainPage } from '../types/mainPage.type';
 import { Logo } from '../components/Logo/Logo';
 import { useAppSelector } from '../hooks';
-import { INIT_ACTIVE_GENRE } from '../constants/film.const';
+import { ALL_GENRES } from '../constants/film.const';
 import { GenresList } from '../components/Genre/GenresList/GenresList';
+import { FIRST_LOAD_FILMS_RENDER_COUNT } from '../constants/film.const';
+import { ShowMoreButton } from '../components/ShowMore/ShowMoreButton';
 
 export const MainPage = ({ promoFilm }: IMainPage) => {
   const { films, activeGenre } = useAppSelector((state) => state);
-  const genres = [INIT_ACTIVE_GENRE].concat([...new Set(films.map((film) => film.genre))]);
-  const filteredFilms = films.filter((film) => film.genre === activeGenre || activeGenre === INIT_ACTIVE_GENRE);
+  const [showedFilmsCount, setShowedFilmsCount] = useState(FIRST_LOAD_FILMS_RENDER_COUNT);
+  const genres = [ALL_GENRES]
+    .concat([...new Set(films.map((film) => film.genre))]);
+  const filteredFilms = films
+    .filter((film) => film.genre === activeGenre || activeGenre === ALL_GENRES)
+    .slice(0, showedFilmsCount);
+
+  const handleMoreClick = () => {
+    setShowedFilmsCount(showedFilmsCount + FIRST_LOAD_FILMS_RENDER_COUNT);
+  };
 
   return (
     <section>
@@ -24,9 +36,7 @@ export const MainPage = ({ promoFilm }: IMainPage) => {
           <GenresList genres={genres} activeGenre={activeGenre}/>
           <FilmList {...filteredFilms} />
           <div className="catalog__more">
-            <button className="catalog__button" type="button">
-              Show more
-            </button>
+            {filteredFilms.length % FIRST_LOAD_FILMS_RENDER_COUNT === 0 && <ShowMoreButton onClick={handleMoreClick}/>}
           </div>
         </section>
         <footer className="page-footer">
