@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 
-import { AppRoute } from '../constants/AppRoute.const';
-import { AuthorizationStatus } from '../constants/AuthStatus.const';
+import { AppRoute } from '../constants/route.const';
+import { AuthorizationStatus } from '../constants/auth.const';
 
 type Props = {
   authorizationStatus: AuthorizationStatus;
