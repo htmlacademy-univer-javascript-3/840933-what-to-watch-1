@@ -8,7 +8,7 @@ import { IGenre } from './genre.type';
 export const Genre = ({ genre, isActive }: IGenre) => {
   const dispatch = useAppDispatch();
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleLink = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     dispatch(changeGenre({
       genre: genre
@@ -17,7 +17,7 @@ export const Genre = ({ genre, isActive }: IGenre) => {
 
   return (
     <li className={`catalog__genres-item ${isActive ? ' catalog__genres-item--active' : ''}`}>
-      <NavLink to="/" className='catalog__genres-link' onClick={handleLinkClick}>
+      <NavLink to="/" className='catalog__genres-link' onClick={handleLink}>
         {genre}
       </NavLink>
     </li>
