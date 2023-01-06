@@ -36,7 +36,7 @@ export const MainPage = ({ promoFilm }: IMainPage) => {
           <GenresList genres={genres} activeGenre={activeGenre}/>
           <FilmList {...filteredFilms} />
           <div className="catalog__more">
-            {filteredFilms.length % FIRST_LOAD_FILMS_RENDER_COUNT === 0 && <ShowMoreButton onClick={handleMoreClick}/>}
+            {filteredFilms.length >= FIRST_LOAD_FILMS_RENDER_COUNT && <ShowMoreButton onClick={handleMoreClick}/>}
           </div>
         </section>
         <footer className="page-footer">
