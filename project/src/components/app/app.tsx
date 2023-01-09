@@ -1,40 +1,62 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import { MyList } from '../../pages/my-list/my-list';
+import MoviePage from '../../pages/movie-page/movie-page';
+import AddReview from '../../pages/add-review/add-review';
+import Player from '../../pages/player/player';
+import { NotFound } from '../../pages/not-found/not-found';
+import PrivateRoute from './private-route';
+import Main from '../../pages/main/main';
+import LoadingPage from '../../pages/loading-page/loading-page';
+import { useAppSelector } from '../../hooks';
+import { getIsDataLoaded } from '../../store/data-reducer/selector';
+import { AuthorizationStatus } from '../../constants';
+import SignIn from '../../pages/sign-in/sign-in';
+import { AppRoute } from '../../consts/route.enum';
 
-import { AppRoute } from '../../constants/route.const';
-import { FILM_LIMIT } from '../../constants/film.const';
-import { AuthorizationStatus } from '../../constants/auth.const';
-import { PrivateRoute } from '../../privateRoute/privateRoute';
-import { MainPage } from '../../pages/Main';
-import { MyList } from '../../pages/MyList';
-import { SignIn } from '../../pages/SignIn';
-import { NotFound } from '../../pages/NotFound';
-import { mockFilms, promoFilm } from '../../mocks/films.mock';
-import { FilmPage } from '../../pages/FilmPage';
-import { AddReview } from '../../pages/AddReview';
-import { Player } from '../../pages/Player';
+function App(): JSX.Element {
+  const isDataLoaded = useAppSelector(getIsDataLoaded);
 
-export const App = () => (
-  <BrowserRouter>
+  if (!isDataLoaded) {
+    return <LoadingPage />;
+  }
+  return (
     <Routes>
+      <Route path="/" element={<Main />} />
       <Route
-        path={AppRoute.Main}
+        path="/login"
         element={
-          <MainPage promoFilm={promoFilm} limit={FILM_LIMIT} />
+          <PrivateRoute
+            status={AuthorizationStatus.NoAuth}
+            destinationPage={<SignIn />}
+            redirectUrl={AppRoute.MAIN_ROUTE}
+          />
         }
       />
-      <Route path={AppRoute.SignIn} element={<SignIn />} />
-      <Route path={AppRoute.Film} element={<FilmPage {...mockFilms.slice(0, 3)} />} />
       <Route
-        path={AppRoute.MyList}
+        path="/mylist"
         element={
-          <PrivateRoute authorizationStatus={AuthorizationStatus.NoAuth}>
-            <MyList />
-          </PrivateRoute>
+          <PrivateRoute
+            status={AuthorizationStatus.Auth}
+            destinationPage={<MyList />}
+            redirectUrl={AppRoute.LOGIN_ROUTE}
+          />
         }
       />
-      <Route path={AppRoute.AddReview} element={<AddReview />} />
-      <Route path={AppRoute.Player} element={<Player />} />
-      <Route path={AppRoute.NotFound} element={<NotFound />} />
+      <Route path="/films/:id" element={<MoviePage />} />
+      <Route
+        path="/films/:id/review"
+        element={
+          <PrivateRoute
+            status={AuthorizationStatus.Auth}
+            destinationPage={<AddReview />}
+            redirectUrl={AppRoute.LOGIN_ROUTE}
+          />
+        }
+      />
+      <Route path="/player/:id" element={<Player />} />
+      <Route path="/*" element={<NotFound />} />
     </Routes>
-  </BrowserRouter>
-);
+  );
+}
+
+export default App;

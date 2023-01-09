@@ -975,7 +975,6 @@ main {
 .player__exit {
   display: block;
   position: absolute;
-  text-decoration: none;
   z-index: 2;
   background: rgba(255, 249, 217, 0.12);
   border-radius: 8px;
@@ -1441,6 +1440,3 @@ main {
   color: #fff;
   background: #fd612ead;
   border-radius: 15px; }
-
-.not-found-page__container {
-  margin: 2rem; }
