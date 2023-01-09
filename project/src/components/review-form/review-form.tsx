@@ -10,7 +10,7 @@ type StarProp = {
   currRating: number
 }
 
-function ReviewForm() {
+export const ReviewForm = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const currentFilm = useAppSelector(getCurrentFilm);
@@ -105,6 +105,4 @@ function ReviewForm() {
       </div>
     </form>
   );
-}
-
-export default ReviewForm;
+};

@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { configureMockStore } from '@jedmao/redux-mock-store';
+import '@testing-library/jest-dom/extend-expect';
 
 import { UserBlock } from './user-block';
 import { AuthorizationStatus } from '../../constants';

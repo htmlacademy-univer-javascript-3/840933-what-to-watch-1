@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 
 import { Logo } from '../../components/logo/logo';
 import { UserBlock } from '../../components/user-block/user-block';
-import ReviewForm from '../../components/review-form/review-form';
+import { ReviewForm } from '../../components/review-form/review-form';
 import { useAppSelector } from '../../hooks';
 import { getCurrentFilm } from '../../store/film-reducer/selector';
 import { AppRoute } from '../../consts/route.enum';
 
-function AddReview() {
+export const AddReview = () => {
   const currentFilm = useAppSelector(getCurrentFilm);
 
   return (
@@ -54,6 +54,4 @@ function AddReview() {
       </div>
     </section>
   );
-}
-
-export default AddReview;
+};

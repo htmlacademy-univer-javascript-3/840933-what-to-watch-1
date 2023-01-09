@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { MyList } from '../../pages/my-list/my-list';
 import MoviePage from '../../pages/movie-page/movie-page';
-import AddReview from '../../pages/add-review/add-review';
+import { AddReview } from '../../pages/add-review/add-review';
 import Player from '../../pages/player/player';
 import { NotFound } from '../../pages/not-found/not-found';
 import PrivateRoute from './private-route';
