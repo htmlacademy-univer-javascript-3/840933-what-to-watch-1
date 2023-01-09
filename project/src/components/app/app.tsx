@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+
 import { MyList } from '../../pages/my-list/my-list';
 import MoviePage from '../../pages/movie-page/movie-page';
 import AddReview from '../../pages/add-review/add-review';
@@ -10,7 +11,7 @@ import LoadingPage from '../../pages/loading-page/loading-page';
 import { useAppSelector } from '../../hooks';
 import { getIsDataLoaded } from '../../store/data-reducer/selector';
 import { AuthorizationStatus } from '../../constants';
-import SignIn from '../../pages/sign-in/sign-in';
+import { SignIn } from '../../pages/sign-in/sign-in';
 import { AppRoute } from '../../consts/route.enum';
 
 function App(): JSX.Element {

@@ -4,19 +4,19 @@ import FilmInfo from './film-info';
 import { ActiveTab } from '../../consts/tab.enum';
 
 type TabsProps = {
-  activePart: ActiveTab
-}
+  activeTab: ActiveTab;
+};
 
-export const Tabs = ({activePart}: TabsProps) => {
-  switch (activePart) {
+export const Tabs = ({ activeTab }: TabsProps) => {
+  switch (activeTab) {
     case ActiveTab.Overview:
-      return <FilmInfo/>;
+      return <FilmInfo />;
 
     case ActiveTab.Review:
-      return <FilmReviews/>;
+      return <FilmReviews />;
 
     case ActiveTab.Details:
-      return <FilmDetails/>;
+      return <FilmDetails />;
 
     default:
       return <p>Not active tab :(</p>;

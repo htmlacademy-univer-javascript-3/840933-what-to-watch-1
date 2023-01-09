@@ -148,7 +148,7 @@ function MoviePage() {
                   </li>
                 </ul>
               </nav>
-              <Tabs activePart={activeTab} />
+              <Tabs activeTab={activeTab} />
             </div>
           </div>
         </div>

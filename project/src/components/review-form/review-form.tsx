@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useCallback, ChangeEvent, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '../../hooks';
@@ -15,10 +15,12 @@ function ReviewForm() {
   const navigate = useNavigate();
   const currentFilm = useAppSelector(getCurrentFilm);
   const [stars, setStars] = useState(0);
-  const [text, setText] = useState('');
+  const [reviewText, setReviewText] = useState('');
   const [errorText, setErrorText] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
-  const onSubmit = (comment: string, rating: number) => {
+  const reviewValidationRules = useMemo(() => reviewText.length >= 50 && reviewText.length <= 400 && stars > 0, [stars, reviewText.length]);
+
+  const onSubmit = useCallback((comment: string, rating: number) => {
     dispatch(
       postCommentAction({
         comment: comment,
@@ -34,15 +36,20 @@ function ReviewForm() {
         setIsDisabled(false);
         setErrorText(err.message);
       });
-  };
+  }, [currentFilm?.id, dispatch, navigate]);
 
-  const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = useCallback((evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     setIsDisabled(true);
-    if (text && stars) {
-      onSubmit(text, stars);
+    if (reviewText && stars) {
+      onSubmit(reviewText, stars);
     }
-  };
+  }, [onSubmit, stars, reviewText]);
+
+  const handleOnChange = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
+    const currentText = event?.target?.value;
+    setReviewText(currentText);
+  }, []);
 
   const Star = ({ currRating }: StarProp) => (
     <>
@@ -59,7 +66,7 @@ function ReviewForm() {
         }}
       />
       <label className="rating__label" htmlFor={`star-${currRating + 1}`}>
-      Rating {currRating + 1}
+        Rating {currRating + 1}
       </label>
     </>);
 
@@ -81,19 +88,15 @@ function ReviewForm() {
           name="review-text"
           id="review-text"
           placeholder="Review text"
-          value={text}
-          onChange={(event) => {
-            const currentText = event.target.value;
-            setText(currentText);
-          }}
+          value={reviewText}
+          onChange={handleOnChange}
         />
         <div className="add-review__submit">
           <button
             className="add-review__btn"
             type="submit"
             disabled={
-              isDisabled ||
-              !(text.length >= 50 && text.length <= 400 && stars > 0)
+              isDisabled || !reviewValidationRules
             }
           >
             Post
