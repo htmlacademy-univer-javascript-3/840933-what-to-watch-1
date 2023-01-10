@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 
-import { NotFound } from '../NotFound';
+import { SignIn } from '../SignIn';
 
 const initialEntries = ['/'];
 
@@ -10,7 +10,7 @@ describe('<NotFound />', () => {
   it('should render', () => {
     const view = render(
       <MemoryRouter initialEntries={initialEntries}>
-        <NotFound />
+        <SignIn />
       </MemoryRouter>
     );
 

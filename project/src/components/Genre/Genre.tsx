@@ -2,7 +2,7 @@ import { Dispatch, MouseEvent, SetStateAction, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useAppDispatch } from '../../hooks';
-import { VISIBLE_FILMS_COUNT } from '../../constants';
+import { VISIBLE_FILMS } from '../../constants';
 import { changeGenre } from '../../store/genreReducer/genreReducer';
 import { AppRoute } from '../../enums/route.enum';
 
@@ -18,7 +18,7 @@ export const Genre = ({ name, isActive, setVisibleFilmsCount }: GenresProps) => 
     (e: MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault();
       dispatch(changeGenre(name));
-      setVisibleFilmsCount(VISIBLE_FILMS_COUNT);
+      setVisibleFilmsCount(VISIBLE_FILMS);
     },
     [dispatch, name, setVisibleFilmsCount]
   );

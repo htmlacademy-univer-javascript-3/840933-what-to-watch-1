@@ -54,7 +54,7 @@ export const getFavoriteFilmsAction = createAsyncThunk<
 
 export const setFavoriteFilmAction = createAsyncThunk<
   Film,
-  { filmId: number; status: number },
+  { filmId: number; status: boolean },
   {
     dispatch: AppDispatch;
     state: State;

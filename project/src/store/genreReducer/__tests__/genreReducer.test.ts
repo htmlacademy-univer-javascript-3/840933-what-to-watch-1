@@ -1,5 +1,5 @@
-import { changeGenre, genreReducer } from './genreReducer';
-import { ALL_GENRES } from '../../constants';
+import { changeGenre, genreReducer } from '../genreReducer';
+import { ALL_GENRES } from '../../../constants';
 
 describe('Reducer: genre', () => {
   it('should change genre', () => {

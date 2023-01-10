@@ -6,18 +6,18 @@ import { UserBlock } from '../../components/UserBlock/UserBlock';
 import { FilmsList } from '../../components/FilmsList/FilmsList';
 import { GenresList } from '../../components/GenresList/GenresList';
 import { useAppSelector } from '../../hooks';
-import { ShowMoreButton } from '../../components/ShowMore/ShowMore';
-import { PlayButton } from '../../components/PlayButton/PlayButton';
+import { ShowMore } from '../../components/ShowMore/ShowMore';
+import { Play } from '../../components/PlayButton/Play';
 import { MyList } from '../../components/MyList/MyList';
 import { getFilms } from '../../store/dataReducer/selector';
 import { getCurrentGenre } from '../../store/genreReducer/selector';
 import { getPromoFilm } from '../../store/filmReducer/selector';
-import { ALL_GENRES, VISIBLE_FILMS_COUNT, VISIBLE_GENRES_COUNT } from '../../constants';
+import { ALL_GENRES, VISIBLE_FILMS, VISIBLE_GENRES } from '../../constants';
 import { AuthorizationStatus } from '../../enums/auth.enum';
 import { getAuthorizationStatus } from '../../store/userReducer/selector';
 
 export const Main = () => {
-  const [visibleFilmsCount, setVisibleFilmsCount] = useState<number>(VISIBLE_FILMS_COUNT);
+  const [visibleFilmsCount, setVisibleFilmsCount] = useState<number>(VISIBLE_FILMS);
   const currentGenre = useAppSelector(getCurrentGenre);
   const films = useAppSelector(getFilms);
   const promoFilm = useAppSelector(getPromoFilm);
@@ -29,7 +29,7 @@ export const Main = () => {
   );
   const genres = [...new Set(films.map((film) => film.genre))].slice(
     0,
-    VISIBLE_GENRES_COUNT
+    VISIBLE_GENRES
   );
   const filmListToRender = filteredFilms.slice(0, visibleFilmsCount);
 
@@ -62,7 +62,7 @@ export const Main = () => {
                 <span className="film-card__year">{promoFilm?.released}</span>
               </p>
               <div className="film-card__buttons">
-                <PlayButton filmId={promoFilm?.id} />
+                <Play filmId={promoFilm?.id} />
                 {authorizationStatus === AuthorizationStatus.Auth && <MyList />}
               </div>
             </div>
@@ -78,7 +78,7 @@ export const Main = () => {
             setVisibleFilmsCount={setVisibleFilmsCount}
           />
           <FilmsList films={filmListToRender} />
-          {filteredFilms.length > visibleFilmsCount && <ShowMoreButton setVisibleFilmsCount={setVisibleFilmsCount} />}
+          {filteredFilms.length > visibleFilmsCount && <ShowMore setVisibleFilmsCount={setVisibleFilmsCount} />}
         </section>
         <Footer />
       </div>

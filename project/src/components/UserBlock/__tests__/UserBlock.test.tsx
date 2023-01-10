@@ -7,15 +7,16 @@ import '@testing-library/jest-dom/extend-expect';
 import { UserBlock } from '../UserBlock';
 import { AuthorizationStatus } from '../../../enums/auth.enum';
 
+const initialEntries = ['/'];
+const mockStore = configureMockStore();
+
 describe('<UserBlock />', () => {
   it('should render sign out when user has auth status', () => {
-    const initialEntries = ['/'];
-    const mockStore = configureMockStore();
     const store = mockStore({
       user: { authorizationStatus: AuthorizationStatus.Auth },
     });
 
-    render(
+    const view = render(
       <Provider store={store}>
         <MemoryRouter initialEntries={initialEntries}>
           <UserBlock />
@@ -23,17 +24,16 @@ describe('<UserBlock />', () => {
       </Provider>
     );
 
+    expect(view).toMatchSnapshot();
     expect(screen.getByText('Sign out')).toBeInTheDocument();
   });
 
   it('should render sign in when user has no auth status', () => {
-    const initialEntries = ['/'];
-    const mockStore = configureMockStore();
     const store = mockStore({
       user: { authorizationStatus: AuthorizationStatus.NoAuth },
     });
 
-    render(
+    const view = render(
       <Provider store={store}>
         <MemoryRouter initialEntries={initialEntries}>
           <UserBlock />
@@ -41,6 +41,7 @@ describe('<UserBlock />', () => {
       </Provider>
     );
 
+    expect(view).toMatchSnapshot();
     expect(screen.getByText('Sign in')).toBeInTheDocument();
   });
 });

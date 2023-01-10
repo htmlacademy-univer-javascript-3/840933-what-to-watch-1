@@ -5,10 +5,10 @@ import {
   getFilmSimilarAction,
   getPromoFilmAction,
   setFavoriteFilmAction,
-} from '../../api/apiActionFilm';
-import filmReducer from './filmReducer';
-import { Film } from '../../types/film.type';
-import { Review } from '../../types/review.type';
+} from '../../../api/apiActionFilm';
+import { filmReducer } from '../filmReducer';
+import { Film } from '../../../types/film.type';
+import { Review } from '../../../types/review.type';
 
 describe('Reducer: user', () => {
   it('should get promo film', () => {

@@ -33,6 +33,7 @@ export const VideoPlayer = ({ film, muted, width, height, isPlaying }: PlayerPro
       muted={muted}
       width={width}
       height={height}
+      data-testid='video'
     />
   );
 };

@@ -8,7 +8,7 @@ import { FilmsList } from '../../components/FilmsList/FilmsList';
 import { Tabs } from '../../components/tabs/tabs';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { NotFound } from '../NotFound/NotFound';
-import { PlayButton } from '../../components/PlayButton/PlayButton';
+import { Play } from '../../components/PlayButton/Play';
 import { MyList } from '../../components/MyList/MyList';
 import { AuthorizationStatus } from '../../enums/auth.enum';
 import { AppRoute } from '../../enums/route.enum';
@@ -72,7 +72,7 @@ export const Movie = () => {
               </p>
 
               <div className="film-card__buttons">
-                <PlayButton filmId={currentFilm.id} />
+                <Play filmId={currentFilm.id} />
                 {authorizationStatus === AuthorizationStatus.Auth &&
                     <MyList />}
                 {authorizationStatus === AuthorizationStatus.Auth &&

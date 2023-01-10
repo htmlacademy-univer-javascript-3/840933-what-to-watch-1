@@ -62,5 +62,3 @@ export const filmReducer = createSlice({
       });
   },
 });
-
-export default filmReducer;

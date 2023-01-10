@@ -15,7 +15,7 @@ const comment = {
 
 describe('<NotFoundScreen />', () => {
   it('should render', () => {
-    render(
+    const view = render(
       <MemoryRouter initialEntries={initialEntries}>
         <ReviewCard
           {...comment}
@@ -23,6 +23,7 @@ describe('<NotFoundScreen />', () => {
       </MemoryRouter>
     );
 
+    expect(view).toMatchSnapshot();
     expect(screen.getByText('December 31, 2022')).toBeInTheDocument();
     expect(screen.getByText('ФИЛЬМ АГОНЬ!!!')).toBeInTheDocument();
     expect(screen.getByText(10)).toBeInTheDocument();

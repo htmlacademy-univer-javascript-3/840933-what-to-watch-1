@@ -7,5 +7,6 @@ export enum AppRoute {
   LOGIN_ROUTE = '/login',
   LOGOUT_ROUTE = '/logout',
   MAIN_ROUTE = '/',
-  PLAYER_ROUTE = '/player'
+  PLAYER_ROUTE = '/player',
+  MYLIST_ROUTE = '/mylist'
 }

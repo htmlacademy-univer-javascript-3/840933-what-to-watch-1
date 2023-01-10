@@ -2,22 +2,22 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 
-import { NotFound } from '../NotFound';
+import { Footer } from '../Footer';
 
 const initialEntries = ['/'];
 
-describe('<NotFound />', () => {
+describe('<Footer />', () => {
   it('should render', () => {
     const view = render(
       <MemoryRouter initialEntries={initialEntries}>
-        <NotFound />
+        <Footer />
       </MemoryRouter>
     );
 
     expect(view).toMatchSnapshot();
 
     expect(
-      screen.getByText('Not Found')
+      screen.getByText('© 2023 What to watch Ltd.')
     ).toBeInTheDocument();
   });
 });

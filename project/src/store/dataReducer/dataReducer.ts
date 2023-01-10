@@ -6,12 +6,12 @@ import { Film } from '../../types/film.type';
 
 type DataReducer = {
   films: Film[];
-  isDataLoaded: boolean;
+  isLoaded: boolean;
 };
 
 export const initialState: DataReducer = {
   films: [],
-  isDataLoaded: false,
+  isLoaded: false,
 };
 
 export const dataReducer = createSlice({
@@ -21,11 +21,11 @@ export const dataReducer = createSlice({
   extraReducers(builder) {
     builder
       .addCase(getFilmsAction.pending, (state) => {
-        state.isDataLoaded = false;
+        state.isLoaded = false;
       })
       .addCase(getFilmsAction.fulfilled, (state, action) => {
         state.films = action.payload;
-        state.isDataLoaded = true;
+        state.isLoaded = true;
       });
   },
 });

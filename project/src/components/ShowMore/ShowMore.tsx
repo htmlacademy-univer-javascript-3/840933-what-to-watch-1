@@ -1,17 +1,17 @@
 import { Dispatch, SetStateAction } from 'react';
 
-import { VISIBLE_FILMS_COUNT } from '../../constants';
+import { VISIBLE_FILMS } from '../../constants';
 
 type ShowMoreProps = {
   setVisibleFilmsCount: Dispatch<SetStateAction<number>>;
 };
 
-export const ShowMoreButton = ({ setVisibleFilmsCount }: ShowMoreProps) => (
+export const ShowMore = ({ setVisibleFilmsCount }: ShowMoreProps) => (
   <div className="catalog__more">
     <button
       className="catalog__button"
       type="button"
-      onClick={() => setVisibleFilmsCount((prev) => prev + VISIBLE_FILMS_COUNT)}
+      onClick={() => setVisibleFilmsCount((prev) => prev + VISIBLE_FILMS)}
     >
       Show more
     </button>

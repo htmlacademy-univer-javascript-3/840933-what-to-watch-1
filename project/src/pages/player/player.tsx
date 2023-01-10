@@ -61,7 +61,6 @@ export const Player = () => {
         ref={videoRef}
         onTimeUpdate={() => handleProgressBar()}
       />
-
       <Link
         type="button"
         className="player__exit"
@@ -69,7 +68,6 @@ export const Player = () => {
       >
         Exit
       </Link>
-
       <div className="player__controls">
         <div className="player__controls-row">
           <div className="player__time">
@@ -80,7 +78,6 @@ export const Player = () => {
           </div>
           <div className="player__time-value">{formatTime(timeLeft)}</div>
         </div>
-
         <div className="player__controls-row">
           <button
             type="button"
@@ -103,7 +100,9 @@ export const Player = () => {
               </>
             )}
           </button>
-          <div className="player__name">Transpotting</div>
+          <div className="player__name">
+            {film?.name}
+          </div>
           <button
             type="button"
             className="player__full-screen"

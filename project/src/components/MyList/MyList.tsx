@@ -16,7 +16,7 @@ export const MyList = () => {
   const currentFilm = useAppSelector(getCurrentFilm);
 
   const handleClick = useCallback(() => {
-    const status = Number(!currentFilm?.isFavorite);
+    const status = !currentFilm?.isFavorite;
 
     dispatch(
       setFavoriteFilmAction({

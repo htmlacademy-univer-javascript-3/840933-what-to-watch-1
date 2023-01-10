@@ -57,7 +57,7 @@ export const SignIn = () => {
         <form action="#" className="sign-in__form" onSubmit={handleSubmit}>
           {isError &&
             <div className="sign-in__message">
-              <p>Please enter a valid email address</p>
+              <p>Please enter a valid email address and password</p>
             </div>}
           <div className="sign-in__fields">
             <div

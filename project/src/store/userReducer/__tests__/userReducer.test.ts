@@ -1,10 +1,10 @@
-import { userReducer } from './userReducer';
-import { AuthorizationStatus } from '../../enums/auth.enum';
+import { userReducer } from '../userReducer';
+import { AuthorizationStatus } from '../../../enums/auth.enum';
 import {
   checkLoginAction,
   loginAction,
   logoutAction,
-} from '../../api/apiActionUser';
+} from '../../../api/apiActionUser';
 
 describe('Reducer: user', () => {
   it('should no auth when logout success', () => {

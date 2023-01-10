@@ -26,9 +26,7 @@ export const FilmDetails = () => {
         <p className="film-card__details-item">
           <strong className="film-card__details-name">Run Time</strong>
           <span className="film-card__details-value">
-            {currentFilm?.runTime
-              ? timeToStringRepresentation(currentFilm?.runTime)
-              : ''}
+            {currentFilm?.runTime && timeToStringRepresentation(currentFilm?.runTime)}
           </span>
         </p>
         <p className="film-card__details-item">
