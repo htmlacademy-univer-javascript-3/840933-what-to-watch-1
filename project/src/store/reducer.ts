@@ -3,10 +3,10 @@ import { createReducer } from '@reduxjs/toolkit';
 import { AppState } from '../types/redux.type';
 import { changeGenre, fillFilms } from './actions';
 import { mockFilms } from '../mocks/films.mock';
-import { INIT_ACTIVE_GENRE } from '../constants/film.const';
+import { ALL_GENRES } from '../constants/film.const';
 
 const initialState: AppState = {
-  activeGenre: INIT_ACTIVE_GENRE,
+  activeGenre: ALL_GENRES,
   films: mockFilms
 };
 

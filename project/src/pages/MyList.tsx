@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom';
 import { Film } from '../components/Film/Film';
 import { Logo } from '../components/Logo/Logo';
 import { useAppSelector } from '../hooks';
-import { INIT_ACTIVE_GENRE } from '../constants/film.const';
+import { ALL_GENRES } from '../constants/film.const';
 import { GenresList } from '../components/Genre/GenresList/GenresList';
 
 
 export const MyList = () => {
   const { films, activeGenre } = useAppSelector((state) => state);
-  const genres = [INIT_ACTIVE_GENRE].concat([...new Set(films.map((film) => film.genre))]);
+  const genres = [ALL_GENRES].concat([...new Set(films.map((film) => film.genre))]);
   const filteredFilms = films
-    .filter((film) => film.genre === activeGenre || activeGenre === INIT_ACTIVE_GENRE);
+    .filter((film) => film.genre === activeGenre || activeGenre === ALL_GENRES);
 
   return (
     <div className="user-page">
