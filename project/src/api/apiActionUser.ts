@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 
-import { AppDispatch, State } from '../types/store';
-import { AppRoute } from '../consts/route.enum';
+import { AppDispatch, State } from '../types/store.type';
+import { AppRoute } from '../enums/route.enum';
 import { clearToken, saveToken } from '../token';
-import { UserData } from '../types/user-data-type';
-import { AuthData } from '../types/auth-data';
+import { UserData } from '../types/userData.type';
+import { AuthData } from '../types/authData.type';
 
 export const checkLoginAction = createAsyncThunk<
   UserData,

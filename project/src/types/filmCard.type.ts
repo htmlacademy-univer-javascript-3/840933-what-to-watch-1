@@ -1,4 +1,4 @@
-import { Film } from './film';
+import { Film } from './film.type';
 
 export type Card = {
   film: Film;

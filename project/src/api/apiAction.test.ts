@@ -4,11 +4,11 @@ import thunk, { ThunkDispatch } from 'redux-thunk';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 
 import { createAPI } from './api';
-import { State } from '../types/store';
+import { State } from '../types/store.type';
 import { createMockFilms } from '../utils/film.util';
-import { AppRoute } from '../consts/route.enum';
+import { AppRoute } from '../enums/route.enum';
 import { checkLoginAction, loginAction, logoutAction } from './apiActionUser';
-import { AuthData } from '../types/auth-data';
+import { AuthData } from '../types/authData.type';
 import {
   getFilmCommentAction,
   getFilmsAction,

@@ -1,30 +1,32 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
-import { Logo } from '../../components/logo/logo';
-import { Footer } from '../../components/footer/footer';
-import { UserBlock } from '../../components/user-block/user-block';
-import { FilmsList } from '../../components/filmsList/filmsList';
-import GenresList from '../../components/genres-list/genres-list';
+import { Logo } from '../../components/Logo/Logo';
+import { Footer } from '../../components/Footer/Footer';
+import { UserBlock } from '../../components/UserBlock/UserBlock';
+import { FilmsList } from '../../components/FilmsList/FilmsList';
+import { GenresList } from '../../components/GenresList/GenresList';
 import { useAppSelector } from '../../hooks';
-import { ShowMoreButton } from '../../components/ShowMoreButton/showMoreButton';
-import { PlayButton } from '../../components/play-button/play-button';
-import { MyListButton } from '../../components/myListButton/myListButton';
-import { getFilms } from '../../store/data-reducer/selector';
-import { getCurrentGenre } from '../../store/genre-reducer/selector';
-import { getPromoFilm } from '../../store/film-reducer/selector';
-import { ALL_GENRES, AuthorizationStatus, VISIBLE_FILMS_COUNT, VISIBLE_GENRES_COUNT } from '../../constants';
-import { getAuthorizationStatus } from '../../store/user-reducer/selector';
+import { ShowMoreButton } from '../../components/ShowMore/ShowMore';
+import { PlayButton } from '../../components/PlayButton/PlayButton';
+import { MyList } from '../../components/MyList/MyList';
+import { getFilms } from '../../store/dataReducer/selector';
+import { getCurrentGenre } from '../../store/genreReducer/selector';
+import { getPromoFilm } from '../../store/filmReducer/selector';
+import { ALL_GENRES, VISIBLE_FILMS_COUNT, VISIBLE_GENRES_COUNT } from '../../constants';
+import { AuthorizationStatus } from '../../enums/auth.enum';
+import { getAuthorizationStatus } from '../../store/userReducer/selector';
 
-function Main() {
+export const Main = () => {
   const [visibleFilmsCount, setVisibleFilmsCount] = useState<number>(VISIBLE_FILMS_COUNT);
   const currentGenre = useAppSelector(getCurrentGenre);
   const films = useAppSelector(getFilms);
   const promoFilm = useAppSelector(getPromoFilm);
   const authorizationStatus = useAppSelector(getAuthorizationStatus);
-  const filteredFilms =
-    currentGenre === ALL_GENRES
+  const filteredFilms = useMemo(
+    () => currentGenre === ALL_GENRES
       ? films
-      : films.filter((film) => film.genre === currentGenre);
+      : films.filter((film) => film.genre === currentGenre), [currentGenre, films]
+  );
   const genres = [...new Set(films.map((film) => film.genre))].slice(
     0,
     VISIBLE_GENRES_COUNT
@@ -61,7 +63,7 @@ function Main() {
               </p>
               <div className="film-card__buttons">
                 <PlayButton filmId={promoFilm?.id} />
-                {authorizationStatus === AuthorizationStatus.Auth && <MyListButton />}
+                {authorizationStatus === AuthorizationStatus.Auth && <MyList />}
               </div>
             </div>
           </div>
@@ -82,6 +84,4 @@ function Main() {
       </div>
     </>
   );
-}
-
-export default Main;
+};

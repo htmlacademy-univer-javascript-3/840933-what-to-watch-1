@@ -1,25 +1,26 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { MyList } from '../../pages/my-list/my-list';
-import MoviePage from '../../pages/movie-page/movie-page';
-import { AddReview } from '../../pages/add-review/add-review';
-import Player from '../../pages/player/player';
-import { NotFound } from '../../pages/not-found/not-found';
-import PrivateRoute from './private-route';
-import Main from '../../pages/main/main';
-import LoadingPage from '../../pages/loading-page/loading-page';
+import { MyList } from '../../pages/MyList/MyList';
+import { Movie } from '../../pages/Movie/Movie';
+import { AddReview } from '../../pages/AddReview/AddReview';
+import { Player } from '../../pages/Player/player';
+import { NotFound } from '../../pages/NotFound/NotFound';
+import { PrivateRoute } from './privateRoute';
+import { Main } from '../../pages/Main/Main';
 import { useAppSelector } from '../../hooks';
-import { getIsDataLoaded } from '../../store/data-reducer/selector';
-import { AuthorizationStatus } from '../../constants';
-import { SignIn } from '../../pages/sign-in/sign-in';
-import { AppRoute } from '../../consts/route.enum';
+import { getIsDataLoaded } from '../../store/dataReducer/selector';
+import { AuthorizationStatus } from '../../enums/auth.enum';
+import { SignIn } from '../../pages/SignIn/SignIn';
+import { AppRoute } from '../../enums/route.enum';
+import { Spinner } from '../Spinner/Spinner';
 
-function App(): JSX.Element {
-  const isDataLoaded = useAppSelector(getIsDataLoaded);
+export const App = () => {
+  const isLoaded = useAppSelector(getIsDataLoaded);
 
-  if (!isDataLoaded) {
-    return <LoadingPage />;
+  if (!isLoaded) {
+    return <Spinner />;
   }
+
   return (
     <Routes>
       <Route path="/" element={<Main />} />
@@ -43,7 +44,7 @@ function App(): JSX.Element {
           />
         }
       />
-      <Route path="/films/:id" element={<MoviePage />} />
+      <Route path="/films/:id" element={<Movie />} />
       <Route
         path="/films/:id/review"
         element={
@@ -58,6 +59,4 @@ function App(): JSX.Element {
       <Route path="/*" element={<NotFound />} />
     </Routes>
   );
-}
-
-export default App;
+};

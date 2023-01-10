@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 
-import { FilmCard } from '../CardItem/CardItem';
-import { Film } from '../../types/film';
+import { FilmCard } from '../FilmCard/FilmCard';
+import { Film } from '../../types/film.type';
 
 export type FilmsProps = {
   films: Film[];

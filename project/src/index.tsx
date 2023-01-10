@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/app/app';
-import {Provider} from 'react-redux';
-import {store} from './store';
-import {checkLoginAction} from './api/apiActionUser';
-import {getFavoriteFilmsAction, getFilmsAction, getPromoFilmAction} from './api/apiActionFilm';
-import {BrowserRouter} from 'react-router-dom';
+
+import { App } from './components/app/app';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { checkLoginAction } from './api/apiActionUser';
+import {
+  getFavoriteFilmsAction,
+  getFilmsAction,
+  getPromoFilmAction,
+} from './api/apiActionFilm';
+import { BrowserRouter } from 'react-router-dom';
 
 store.dispatch(checkLoginAction()).then(() => {
   store.dispatch(getFilmsAction());
@@ -13,17 +18,16 @@ store.dispatch(checkLoginAction()).then(() => {
   store.dispatch(getFavoriteFilmsAction());
 });
 
-
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
+  document.getElementById('root') as HTMLElement
 );
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <App/>
+        <App />
       </BrowserRouter>
     </Provider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

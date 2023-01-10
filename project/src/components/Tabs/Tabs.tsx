@@ -1,7 +1,7 @@
-import FilmDetails from './film-details';
-import FilmReviews from './film-reviews';
-import FilmInfo from './film-info';
-import { ActiveTab } from '../../consts/tab.enum';
+import { FilmDetails } from './filmDetails';
+import { FilmReviews } from './filmReviews';
+import { FilmInfo } from './filmInfo';
+import { ActiveTab } from '../../enums/tab.enum';
 
 type TabsProps = {
   activeTab: ActiveTab;

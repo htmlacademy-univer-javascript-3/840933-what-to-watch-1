@@ -4,12 +4,14 @@ import { Provider } from 'react-redux';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import { MemoryRouter } from 'react-router-dom';
 
-import App from './app';
-import { ALL_GENRES, AuthorizationStatus } from '../../constants';
+import { App } from './app';
+import { ALL_GENRES } from '../../constants';
+import { AuthorizationStatus } from '../../enums/auth.enum';
 import { createMockFilms } from '../../utils/film.util';
 
 const mockStore = configureMockStore();
 const mockFilms = createMockFilms(2);
+
 const store = mockStore({
   user: { authorizationStatus: AuthorizationStatus.Auth },
   data: { films: mockFilms, isDataLoaded: true },
@@ -34,7 +36,7 @@ const fakeApp = (
 );
 
 describe('Application Routing', () => {
-  it('should render "MainScreen" when user navigate to "/"', () => {
+  it('should render <MainScreen /> -> `/`', () => {
     render(fakeApp);
     expect(screen.getByText('Play')).toBeInTheDocument();
     expect(screen.getByText(`${ALL_GENRES}`)).toBeInTheDocument();

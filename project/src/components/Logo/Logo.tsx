@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { AppRoute } from '../../consts/route.enum';
+
+import { AppRoute } from '../../enums/route.enum';
 
 interface LogoProps {
   light: boolean;

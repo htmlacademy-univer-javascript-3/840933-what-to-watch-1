@@ -3,11 +3,11 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '../../hooks';
-import { getCurrentFilm } from '../../store/film-reducer/selector';
-import { AppRoute } from '../../consts/route.enum';
+import { getCurrentFilm } from '../../store/filmReducer/selector';
+import { AppRoute } from '../../enums/route.enum';
 import { getFilmInfoAction } from '../../api/apiActionFilm';
 
-function Player() {
+export const Player = () => {
   const film = useAppSelector(getCurrentFilm);
   const [isPlaying, setIsPlaying] = useState(false);
   const dispatch = useAppDispatch();
@@ -118,6 +118,4 @@ function Player() {
       </div>
     </div>
   );
-}
-
-export default Player;
+};

@@ -1,10 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 
-import { Film } from '../types/film';
-import { AppDispatch, State } from '../types/store';
-import { Review } from '../types/review';
-import { AppRoute } from '../consts/route.enum';
+import { Film } from '../types/film.type';
+import { AppDispatch, State } from '../types/store.type';
+import { Review } from '../types/review.type';
+import { AppRoute } from '../enums/route.enum';
 
 export const getFilmInfoAction = createAsyncThunk<
   Film,
@@ -76,7 +76,7 @@ export const getFilmSimilarAction = createAsyncThunk<
     extra: AxiosInstance;
   }
 >('films/filmSimilar', async (id, { extra: api }) => {
-  const url = `${AppRoute.FILM_ROUTE}/${id}/${AppRoute.SIMILAR_ROUTE}`;
+  const url = `${AppRoute.FILM_ROUTE}/${id}${AppRoute.SIMILAR_ROUTE}`;
   return await api.get<Film[]>(url).then((result) => result.data);
 });
 
