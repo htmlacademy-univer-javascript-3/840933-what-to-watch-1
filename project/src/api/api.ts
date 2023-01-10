@@ -1,26 +1,23 @@
-import axios, {AxiosInstance, AxiosRequestConfig} from 'axios';
-import {getToken} from '../token';
+import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
-const URL = 'https://10.react.pages.academy/wtw';
-const REQUEST_TIMEOUT = 5000;
+import { getToken } from '../token';
+import { BACKEND_URL, REQUEST_TIMEOUT } from '../constants';
 
 export function createAPI(): AxiosInstance {
-
   const api = axios.create({
-    baseURL: URL,
+    baseURL: BACKEND_URL,
     timeout: REQUEST_TIMEOUT,
   });
 
-  api.interceptors.request.use(
-    (config: AxiosRequestConfig) => {
-      const token = getToken();
+  api.interceptors.request.use((config: AxiosRequestConfig) => {
+    const token = getToken();
 
-      if (token) {
-        config.headers['x-token'] = token;
-      }
+    if (token) {
+      config.headers['x-token'] = token;
+    }
 
-      return config;
-    },
-  );
+    return config;
+  });
+
   return api;
 }
