@@ -1,21 +1,23 @@
-import { format } from 'date-fns';
+import { useMemo } from 'react';
+import moment from 'moment';
 
-import { IReview } from '../../types/review.type';
+import { Review } from '../../types/review.type';
 
-export const ReviewCard = ({ date, comment, rating, user: { name } }: IReview) => {
-  const reviewDate = new Date(date);
+export const ReviewCard = ({ comment, user, date, rating }: Review) => {
+  const formatDate = useMemo(
+    () => moment(date).format('MMMM DD, YYYY'),
+    [date]
+  );
 
   return (
     <div className="review">
       <blockquote className="review__quote">
-        <p className="review__text">
-          {comment}
-        </p>
+        <p className="review__text">{comment}</p>
         <footer className="review__details">
-          <cite className="review__author">
-            {name}
-          </cite>
-          <time className="review__date" dateTime={format(reviewDate, 'yyyy-MM-dd')}>{format(reviewDate, 'MMMM dd, yyyy')}</time>
+          <cite className="review__author">{user.name}</cite>
+          <time className="review__date" dateTime={date}>
+            {formatDate}
+          </time>
         </footer>
       </blockquote>
       <div className="review__rating">

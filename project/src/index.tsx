@@ -1,18 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
 
 import { App } from './components/app/app';
+import { Provider } from 'react-redux';
 import { store } from './store';
+import { checkLoginAction } from './api/apiActionUser';
+import {
+  getFavoriteFilmsAction,
+  getFilmsAction,
+  getPromoFilmAction,
+} from './api/apiActionFilm';
+import { BrowserRouter } from 'react-router-dom';
+
+store.dispatch(checkLoginAction()).then(() => {
+  store.dispatch(getFilmsAction());
+  store.dispatch(getPromoFilmAction());
+  store.dispatch(getFavoriteFilmsAction());
+});
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
+  document.getElementById('root') as HTMLElement
 );
 
 root.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-  </Provider>
+  <React.StrictMode>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </React.StrictMode>
 );
