@@ -1,4 +1,4 @@
-import { dataReducer } from '../dataReducer';
+import { dataReducer } from '../data.reducer';
 import { getFilmsAction } from '../../../api/apiActionFilm';
 
 describe('dataReducer', () => {

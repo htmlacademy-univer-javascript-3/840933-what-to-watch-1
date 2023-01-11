@@ -1,4 +1,4 @@
-import { userReducer } from '../userReducer';
+import { userReducer } from '../user.reducer';
 import { AuthorizationStatus } from '../../../enums/auth.enum';
 import {
   checkLoginAction,

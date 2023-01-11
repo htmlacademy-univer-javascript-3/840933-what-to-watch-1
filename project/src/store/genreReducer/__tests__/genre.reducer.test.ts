@@ -1,4 +1,4 @@
-import { changeGenre, genreReducer } from '../genreReducer';
+import { changeGenre, genreReducer } from '../genre.reducer';
 import { ALL_GENRES } from '../../../constants';
 
 describe('genreReducer', () => {

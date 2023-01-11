@@ -6,7 +6,7 @@ import {
   getPromoFilmAction,
   setFavoriteFilmAction,
 } from '../../../api/apiActionFilm';
-import { filmReducer } from '../filmReducer';
+import { filmReducer } from '../film.reducer';
 import { Film } from '../../../types/film.type';
 
 describe('filmReducer', () => {
