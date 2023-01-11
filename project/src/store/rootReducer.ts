@@ -1,10 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import { Reducer } from '../enums/reducers.enum';
-import { filmReducer } from './filmReducer/filmReducer';
-import { genreReducer } from './genreReducer/genreReducer';
-import { userReducer } from './userReducer/userReducer';
-import { dataReducer } from './dataReducer/dataReducer';
+import { filmReducer } from './filmReducer/film.reducer';
+import { genreReducer } from './genreReducer/genre.reducer';
+import { userReducer } from './userReducer/user.reducer';
+import { dataReducer } from './dataReducer/data.reducer';
 
 export const rootReducer = combineReducers({
   [Reducer.Data]: dataReducer.reducer,

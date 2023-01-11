@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { useAppDispatch } from '../../hooks';
 import { VISIBLE_FILMS } from '../../constants';
-import { changeGenre } from '../../store/genreReducer/genreReducer';
+import { changeGenre } from '../../store/genreReducer/genre.reducer';
 import { AppRoute } from '../../enums/route.enum';
 
 type GenresProps = {
