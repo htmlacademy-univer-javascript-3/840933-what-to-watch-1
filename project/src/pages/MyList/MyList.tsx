@@ -7,6 +7,7 @@ import { getFavoriteFilms } from '../../store/filmReducer/selector';
 
 export const MyList = () => {
   const films = useAppSelector(getFavoriteFilms);
+
   return (
     <div className="user-page">
       <header className="page-header user-page__head">

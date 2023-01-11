@@ -1,7 +1,7 @@
 import { dataReducer } from '../dataReducer';
 import { getFilmsAction } from '../../../api/apiActionFilm';
 
-describe('Test dataReducer', () => {
+describe('dataReducer', () => {
   it('should get films and change status', () => {
     const state = { films: [], isLoaded: false };
     const film = { id: 2, name: 'testFilm', isFavorite: true };
