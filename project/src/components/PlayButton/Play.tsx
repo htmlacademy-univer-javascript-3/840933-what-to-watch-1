@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { AppRoute } from '../../enums/route.enum';
 
-class PlayProps {
+type PlayProps = {
   filmId: number | undefined;
 }
 
