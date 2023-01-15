@@ -4,6 +4,10 @@ import { timeToStringRepresentation } from '../../utils/time.util';
 
 export const FilmDetails = () => {
   const currentFilm = useAppSelector(getCurrentFilm);
+  const starring = currentFilm?.starring.join('\r');
+  const genre = currentFilm?.genre;
+  const released = currentFilm?.released;
+  const runTime = currentFilm?.runTime;
 
   return (
     <div className="film-card__text film-card__row">
@@ -18,7 +22,7 @@ export const FilmDetails = () => {
           <strong className="film-card__details-name">Starring</strong>
           <span className="film-card__details-value">
             {' '}
-            {currentFilm?.starring.join('\r')}
+            {starring}
           </span>
         </p>
       </div>
@@ -26,17 +30,19 @@ export const FilmDetails = () => {
         <p className="film-card__details-item">
           <strong className="film-card__details-name">Run Time</strong>
           <span className="film-card__details-value">
-            {currentFilm?.runTime && timeToStringRepresentation(currentFilm?.runTime)}
+            {runTime && timeToStringRepresentation(currentFilm?.runTime)}
           </span>
         </p>
         <p className="film-card__details-item">
           <strong className="film-card__details-name">Genre</strong>
-          <span className="film-card__details-value">{currentFilm?.genre}</span>
+          <span className="film-card__details-value">
+            {genre}
+          </span>
         </p>
         <p className="film-card__details-item">
           <strong className="film-card__details-name">Released</strong>
           <span className="film-card__details-value">
-            {currentFilm?.released}
+            {released}
           </span>
         </p>
       </div>
