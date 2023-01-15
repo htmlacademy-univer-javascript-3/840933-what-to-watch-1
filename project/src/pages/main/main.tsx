@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { Logo } from '../../components/Logo/Logo';
 import { Footer } from '../../components/Footer/Footer';
-import { UserBlock } from '../../components/UserBlock/UserBlock';
+import { UserBlock } from '../../components/User/User';
 import { FilmsList } from '../../components/FilmsList/FilmsList';
 import { GenresList } from '../../components/GenresList/GenresList';
 import { useAppSelector } from '../../hooks';

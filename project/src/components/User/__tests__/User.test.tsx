@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import '@testing-library/jest-dom/extend-expect';
 
-import { UserBlock } from '../UserBlock';
+import { UserBlock } from '../User';
 import { AuthorizationStatus } from '../../../enums/auth.enum';
 
 const initialEntries = ['/'];
