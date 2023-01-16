@@ -7,6 +7,7 @@ import { Card } from '../../types/filmCard.type';
 
 export const FilmCard = ({ film, onMouseOver }: Card) => {
   const navigate = useNavigate();
+  const { name, id } = film;
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [isNeedVideoToPlay, setIsNeedVideoPlay] = useState(false);
 
@@ -35,9 +36,9 @@ export const FilmCard = ({ film, onMouseOver }: Card) => {
         setIsNeedVideoPlay(true);
       }}
       onMouseLeave={handleFilmCardMouseLeave}
-      onClick={() => navigate(`${AppRoute.FILM_ROUTE}/${film.id}`)}
+      onClick={() => navigate(`${AppRoute.FILM_ROUTE}/${id}`)}
     >
-      <Link to={`${AppRoute.FILM_ROUTE}/${film.id}`} className="small-film-card__link">
+      <Link to={`${AppRoute.FILM_ROUTE}/${id}`} className="small-film-card__link">
         <div className="small-film-card__image">
           <VideoPlayer
             film={film}
@@ -48,7 +49,7 @@ export const FilmCard = ({ film, onMouseOver }: Card) => {
           />
         </div>
         <h3 className="small-film-card__title">
-          {film.name}
+          {name}
         </h3>
       </Link>
     </article>
