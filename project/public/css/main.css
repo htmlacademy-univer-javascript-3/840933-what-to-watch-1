@@ -1333,6 +1333,10 @@ main {
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%, rgba(0, 0, 0, 0)), color-stop(97%, rgba(0, 0, 0, 0.63)));
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0.63) 97%); }
 
+  .small-film-card__image:hover {
+    cursor: pointer;
+  }
+
 .small-film-card__title {
   position: absolute;
   z-index: 2;

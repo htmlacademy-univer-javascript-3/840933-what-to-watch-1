@@ -37,20 +37,20 @@ export const FilmCard = ({ film, onMouseOver }: Card) => {
       onMouseLeave={handleFilmCardMouseLeave}
       onClick={() => navigate(`${AppRoute.FILM_ROUTE}/${film.id}`)}
     >
-      <div className="small-film-card__image">
-        <VideoPlayer
-          film={film}
-          muted
-          width={280}
-          height={175}
-          isPlaying={isVideoPlaying}
-        />
-      </div>
-      <h3 className="small-film-card__title">
-        <Link to={`${AppRoute.FILM_ROUTE}/${film.id}`} className="small-film-card__link">
+      <Link to={`${AppRoute.FILM_ROUTE}/${film.id}`} className="small-film-card__link">
+        <div className="small-film-card__image">
+          <VideoPlayer
+            film={film}
+            muted
+            width={280}
+            height={175}
+            isPlaying={isVideoPlaying}
+          />
+        </div>
+        <h3 className="small-film-card__title">
           {film.name}
-        </Link>
-      </h3>
+        </h3>
+      </Link>
     </article>
   );
 };
