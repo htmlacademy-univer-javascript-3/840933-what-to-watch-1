@@ -46,10 +46,14 @@ export const Player = () => {
   }, []);
 
   const formatTime = useCallback((seconds: number) => {
-    if (seconds / 60 / 60 >= 1) {
-      return moment(seconds * 1000).format('-hh:mm:ss');
+    const hours = seconds / 60 / 60;
+    const timeToFormat = seconds * 1000;
+
+    if (hours >= 1) {
+      return moment(timeToFormat).format('-hh:mm:ss');
     }
-    return moment(seconds * 1000).format('-mm:ss');
+
+    return moment(timeToFormat).format('-mm:ss');
   }, []);
 
   return (

@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть»
 
 * Студент: [Владислав Аткишкин](https://up.htmlacademy.ru/univer-js3-urfu/1/user/840933).
-* Наставник:  [Александр Григорьев](https://htmlacademy.ru/profile/id43108).
+* Наставник: [Александр Григорьев](https://htmlacademy.ru/profile/id43108).
 
 ---
 
