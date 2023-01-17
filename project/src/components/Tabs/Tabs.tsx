@@ -19,6 +19,10 @@ export const Tabs = ({ activeTab }: TabsProps) => {
       return <FilmDetails />;
 
     default:
-      return <p>Not active tab :(</p>;
+      return (
+        <p>
+          Not active tab :(
+        </p>
+      );
   }
 };

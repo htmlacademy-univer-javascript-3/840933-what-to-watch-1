@@ -14,7 +14,7 @@ export const VideoPlayer = ({ film, muted, width, height, isPlaying }: PlayerPro
   const videoPlayerRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
-    if (videoPlayerRef === null) {
+    if (!videoPlayerRef) {
       return;
     }
 
