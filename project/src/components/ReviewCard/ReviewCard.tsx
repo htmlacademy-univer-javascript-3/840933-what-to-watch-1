@@ -21,7 +21,7 @@ export const ReviewCard = ({ comment, user, date, rating }: Review) => {
         </footer>
       </blockquote>
       <div className="review__rating">
-        {rating}
+        {Number.isInteger(rating) ? `${rating}.0` : `${rating}`}
       </div>
     </div>
   );
