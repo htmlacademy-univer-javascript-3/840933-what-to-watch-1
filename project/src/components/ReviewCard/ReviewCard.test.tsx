@@ -25,7 +25,7 @@ describe('<NotFoundScreen />', () => {
 
     expect(screen.getByText('December 31, 2022')).toBeInTheDocument();
     expect(screen.getByText('ФИЛЬМ АГОНЬ!!!')).toBeInTheDocument();
-    expect(screen.getByText(10)).toBeInTheDocument();
+    expect(screen.getByText('10.0')).toBeInTheDocument();
     expect(screen.getByText('vladik')).toBeInTheDocument();
   });
 });
