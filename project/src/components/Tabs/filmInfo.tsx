@@ -4,11 +4,14 @@ import { getStringRating } from '../../utils/rating.util';
 
 export const FilmInfo = () => {
   const currentFilm = useAppSelector(getCurrentFilm);
+  const rating = Number.isInteger(currentFilm?.rating) ? `${currentFilm?.rating}.0` : `${currentFilm?.rating}`;
 
   return (
     <>
       <div className="film-rating">
-        <div className="film-rating__score">{currentFilm?.rating}</div>
+        <div className="film-rating__score">
+          {rating}
+        </div>
         <p className="film-rating__meta">
           {currentFilm?.rating &&
             <span className="film-rating__level">

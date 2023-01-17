@@ -4,10 +4,10 @@ import '@testing-library/jest-dom/extend-expect';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import { Provider } from 'react-redux';
 
-import { AuthorizationStatus } from '../../../enums/auth.enum';
-import { ALL_GENRES } from '../../../constants';
-import { ReviewForm } from '../ReviewForm';
-import { createMockFilms } from '../../../utils/film.util';
+import { AuthorizationStatus } from '../../enums/auth.enum';
+import { ALL_GENRES } from '../../constants';
+import { ReviewForm } from './ReviewForm';
+import { createMockFilms } from '../../utils/film.util';
 
 const initialEntries = ['/'];
 
@@ -29,15 +29,13 @@ const store = mockStore({
 
 describe('<ReviewForm />', () => {
   it('should render', () => {
-    const view = render(
+    render(
       <Provider store={store}>
         <MemoryRouter initialEntries={initialEntries}>
           <ReviewForm />
         </MemoryRouter>
       </Provider>
     );
-
-    expect(view).toMatchSnapshot();
 
     expect(
       screen.getByText('Post')

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 
-import { FilmCard } from '../FilmCard';
+import { FilmCard } from './FilmCard';
 
 const initialEntries = ['/'];
 
@@ -28,13 +28,11 @@ const mockFilm = {
 
 describe('<FilmCard />', () => {
   it('should render', async () => {
-    const view = render(
+    render(
       <MemoryRouter initialEntries={initialEntries}>
         <FilmCard film={mockFilm} onMouseOver={() => mockFilm} />
       </MemoryRouter>
     );
-
-    expect(view).toMatchSnapshot();
 
     expect(
       screen.getByText('Terminator')

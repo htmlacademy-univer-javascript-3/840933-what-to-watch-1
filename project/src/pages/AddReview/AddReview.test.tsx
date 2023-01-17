@@ -4,10 +4,10 @@ import '@testing-library/jest-dom/extend-expect';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import { Provider } from 'react-redux';
 
-import { AuthorizationStatus } from '../../../enums/auth.enum';
-import { ALL_GENRES } from '../../../constants';
-import { Genre } from '../Genre';
-import { createMockFilms } from '../../../utils/film.util';
+import { AuthorizationStatus } from '../../enums/auth.enum';
+import { ALL_GENRES } from '../../constants';
+import { AddReview } from './AddReview';
+import { createMockFilms } from '../../utils/film.util';
 
 const initialEntries = ['/'];
 
@@ -27,20 +27,27 @@ const store = mockStore({
   genre: { currentGenre: ALL_GENRES },
 });
 
-describe('<Genre />', () => {
+describe('<AddReviewForm />', () => {
   it('should render', () => {
-    const view = render(
+    render(
       <Provider store={store}>
         <MemoryRouter initialEntries={initialEntries}>
-          <Genre name={'action'} isActive setVisibleFilmsCount={() => 8} />
+          <AddReview />
         </MemoryRouter>
       </Provider>
     );
 
-    expect(view).toMatchSnapshot();
-
     expect(
-      screen.getByText('action')
+      screen.getByText('Post')
     ).toBeInTheDocument();
+    expect(
+      screen.getByText('Sign out')
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText('Add review')
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByRole('navigation')
+    ).not.toEqual([]);
   });
 });

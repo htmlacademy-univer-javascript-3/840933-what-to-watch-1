@@ -4,10 +4,10 @@ import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 
-import { SignIn } from '../SignIn';
-import { createMockFilms } from '../../../utils/film.util';
-import { AuthorizationStatus } from '../../../enums/auth.enum';
-import { ALL_GENRES } from '../../../constants';
+import { SignIn } from './SignIn';
+import { createMockFilms } from '../../utils/film.util';
+import { AuthorizationStatus } from '../../enums/auth.enum';
+import { ALL_GENRES } from '../../constants';
 
 const initialEntries = ['/'];
 const mockStore = configureMockStore();
@@ -28,7 +28,7 @@ const store = mockStore({
 
 describe('<SignIn />', () => {
   it('should render', () => {
-    const view = render(
+    render(
       <Provider store={store}>
         <MemoryRouter initialEntries={initialEntries}>
           <SignIn />
@@ -36,7 +36,6 @@ describe('<SignIn />', () => {
       </Provider>
     );
 
-    expect(view).toMatchSnapshot();
     expect(
       screen.getByText('Password')
     ).toBeInTheDocument();

@@ -1,6 +1,6 @@
-import { FilmDetails } from './filmDetails';
-import { FilmReviews } from './filmReviews';
-import { FilmInfo } from './filmInfo';
+import { FilmDetails } from './FilmDetails';
+import { FilmReviews } from './FilmReviews';
+import { FilmInfo } from './FilmInfo';
 import { ActiveTab } from '../../enums/tab.enum';
 
 type TabsProps = {

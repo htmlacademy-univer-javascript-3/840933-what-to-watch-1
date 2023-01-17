@@ -6,7 +6,7 @@ import { AddReview } from '../../pages/AddReview/AddReview';
 import { Player } from '../../pages/Player/Player';
 import { NotFound } from '../../pages/NotFound/NotFound';
 import { PrivateRoute } from './privateRoute';
-import { Main } from '../../pages/main/main';
+import { Main } from '../../pages/Main/Main';
 import { useAppSelector } from '../../hooks';
 import { getIsDataLoaded } from '../../store/dataReducer/selector';
 import { AuthorizationStatus } from '../../enums/auth.enum';

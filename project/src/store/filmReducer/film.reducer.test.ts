@@ -5,9 +5,9 @@ import {
   getFilmSimilarAction,
   getPromoFilmAction,
   setFavoriteFilmAction,
-} from '../../../api/apiActionFilm';
-import { filmReducer } from '../film.reducer';
-import { Film } from '../../../types/film.type';
+} from '../../api/apiActionFilm';
+import { filmReducer } from './film.reducer';
+import { Film } from '../../types/film.type';
 
 describe('filmReducer', () => {
   it('should get film info when status fulfilled', () => {
