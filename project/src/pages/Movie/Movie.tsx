@@ -5,7 +5,7 @@ import { Logo } from '../../components/Logo/Logo';
 import { Footer } from '../../components/Footer/Footer';
 import { UserBlock } from '../../components/User/User';
 import { FilmsList } from '../../components/FilmsList/FilmsList';
-import { Tabs } from '../../components/tabs/Tabs';
+import { Tabs } from '../../components/Tabs/Tabs';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { NotFound } from '../NotFound/NotFound';
 import { Play } from '../../components/PlayButton/Play';

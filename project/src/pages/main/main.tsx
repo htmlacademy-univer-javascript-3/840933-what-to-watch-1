@@ -32,6 +32,7 @@ export const Main = () => {
     VISIBLE_GENRES
   );
   const filmListToRender = filteredFilms.slice(0, visibleFilmsCount);
+  const isAuth = authorizationStatus === AuthorizationStatus.Auth;
 
   genres.unshift(ALL_GENRES);
 
@@ -63,7 +64,7 @@ export const Main = () => {
               </p>
               <div className="film-card__buttons">
                 <Play filmId={promoFilm?.id} />
-                {authorizationStatus === AuthorizationStatus.Auth && <MyList />}
+                {isAuth && <MyList />}
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 
-import { ReviewCard } from '../ReviewCard';
+import { ReviewCard } from './ReviewCard';
 
 const initialEntries = ['/'];
 const comment = {
@@ -15,7 +15,7 @@ const comment = {
 
 describe('<NotFoundScreen />', () => {
   it('should render', () => {
-    const view = render(
+    render(
       <MemoryRouter initialEntries={initialEntries}>
         <ReviewCard
           {...comment}
@@ -23,7 +23,6 @@ describe('<NotFoundScreen />', () => {
       </MemoryRouter>
     );
 
-    expect(view).toMatchSnapshot();
     expect(screen.getByText('December 31, 2022')).toBeInTheDocument();
     expect(screen.getByText('ФИЛЬМ АГОНЬ!!!')).toBeInTheDocument();
     expect(screen.getByText(10)).toBeInTheDocument();

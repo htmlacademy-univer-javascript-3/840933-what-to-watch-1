@@ -62,7 +62,7 @@ export const setFavoriteFilmAction = createAsyncThunk<
   }
 >('films/setFavorite', async ({ filmId: id, status }, { extra: api }) => {
   const { data } = await api.post<Film>(
-    `${AppRoute.FAVORITES_ROUTE}/${id}/${status}`
+    `${AppRoute.FAVORITES_ROUTE}/${id}/${status ? 1 : 0}`
   );
   return data;
 });

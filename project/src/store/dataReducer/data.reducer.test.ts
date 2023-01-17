@@ -1,5 +1,5 @@
-import { dataReducer } from '../data.reducer';
-import { getFilmsAction } from '../../../api/apiActionFilm';
+import { dataReducer } from './data.reducer';
+import { getFilmsAction } from '../../api/apiActionFilm';
 
 describe('dataReducer', () => {
   it('should get films and change status', () => {

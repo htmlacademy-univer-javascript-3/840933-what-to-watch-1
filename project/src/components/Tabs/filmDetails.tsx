@@ -1,6 +1,6 @@
 import { useAppSelector } from '../../hooks';
 import { getCurrentFilm } from '../../store/filmReducer/selector';
-import { timeToStringRepresentation } from '../../utils/time.util';
+import { convertIntTimeToString } from '../../utils/time.util';
 
 export const FilmDetails = () => {
   const currentFilm = useAppSelector(getCurrentFilm);
@@ -30,7 +30,7 @@ export const FilmDetails = () => {
         <p className="film-card__details-item">
           <strong className="film-card__details-name">Run Time</strong>
           <span className="film-card__details-value">
-            {runTime && timeToStringRepresentation(currentFilm?.runTime)}
+            {runTime && convertIntTimeToString(currentFilm?.runTime)}
           </span>
         </p>
         <p className="film-card__details-item">

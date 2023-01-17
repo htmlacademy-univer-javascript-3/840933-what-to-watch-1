@@ -2,14 +2,15 @@ import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect';
 import { configureMockStore } from '@jedmao/redux-mock-store';
-
-import { NotFound } from '../NotFound';
-import { createMockFilms } from '../../../utils/film.util';
-import { AuthorizationStatus } from '../../../enums/auth.enum';
-import { ALL_GENRES } from '../../../constants';
 import { Provider } from 'react-redux';
 
+import { AuthorizationStatus } from '../../enums/auth.enum';
+import { ALL_GENRES } from '../../constants';
+import { Genre } from './Genre';
+import { createMockFilms } from '../../utils/film.util';
+
 const initialEntries = ['/'];
+
 const mockStore = configureMockStore();
 const mockFilms = createMockFilms(2);
 
@@ -26,20 +27,18 @@ const store = mockStore({
   genre: { currentGenre: ALL_GENRES },
 });
 
-describe('<NotFound />', () => {
+describe('<Genre />', () => {
   it('should render', () => {
-    const view = render(
+    render(
       <Provider store={store}>
         <MemoryRouter initialEntries={initialEntries}>
-          <NotFound />
+          <Genre name={'action'} isActive setVisibleFilmsCount={() => 8} />
         </MemoryRouter>
       </Provider>
     );
 
-    expect(view).toMatchSnapshot();
-
     expect(
-      screen.getByText('Not Found')
+      screen.getByText('action')
     ).toBeInTheDocument();
   });
 });

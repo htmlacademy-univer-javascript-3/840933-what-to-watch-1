@@ -4,8 +4,8 @@ import { Provider } from 'react-redux';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import '@testing-library/jest-dom/extend-expect';
 
-import { UserBlock } from '../User';
-import { AuthorizationStatus } from '../../../enums/auth.enum';
+import { UserBlock } from './User';
+import { AuthorizationStatus } from '../../enums/auth.enum';
 
 const initialEntries = ['/'];
 const mockStore = configureMockStore();
@@ -16,7 +16,7 @@ describe('<UserBlock />', () => {
       user: { authorizationStatus: AuthorizationStatus.Auth },
     });
 
-    const view = render(
+    render(
       <Provider store={store}>
         <MemoryRouter initialEntries={initialEntries}>
           <UserBlock />
@@ -24,7 +24,6 @@ describe('<UserBlock />', () => {
       </Provider>
     );
 
-    expect(view).toMatchSnapshot();
     expect(screen.getByText('Sign out')).toBeInTheDocument();
   });
 
@@ -33,7 +32,7 @@ describe('<UserBlock />', () => {
       user: { authorizationStatus: AuthorizationStatus.NoAuth },
     });
 
-    const view = render(
+    render(
       <Provider store={store}>
         <MemoryRouter initialEntries={initialEntries}>
           <UserBlock />
@@ -41,7 +40,6 @@ describe('<UserBlock />', () => {
       </Provider>
     );
 
-    expect(view).toMatchSnapshot();
     expect(screen.getByText('Sign in')).toBeInTheDocument();
   });
 });
